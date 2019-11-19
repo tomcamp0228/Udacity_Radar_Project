@@ -7,7 +7,7 @@ This project shows the way radar is working and how we detect the position of ob
 	2. For each cell with a whole slide window, we compute the noise average:
   ```matlab
  noise_level(i,j)=(sum(sum(RDM_power(i-Tr-Gr:i+Tr+Gr,j-Td-Gd:j+Td+Gd)))-sum(sum(RDM_power(i-Gr:i+Gr,j-Gd:j+Gd))))/((2*Tr+2*Gr+1)*(2*Td+2*Gd+1) - (2*Gr+1)*(2*Gd+1));
-  ```
+```
 	3. Then we can transform it into dB level and add the offset, comparing it to the Cell Under Test. The offset needs to be carefully selected, if the offset is too small, we will get a large range of possible area for the velocity and distance of the object; if too big, we won't get any result. Here, after several tests, I selected `offset=20`.
 	4. If the CUT is greater than the average noise, we set its value to 1, else to 0.
 - **Selection of Training Cells, Guarding Cells and offset**
