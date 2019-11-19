@@ -2,6 +2,7 @@
 
 This project shows the way radar is working and how we detect the position of objects.
 - **Implementation steps for the 2D CFAR process**
+
 	The 2D CFAR contains these steps shown as following:
 	1. Determine the numbers of  Training Cells and Guard Cells with `Tr Td Gr Gd`. For the sliding window in 2D DFAR,  the Cell Under Test *(CUT)* is in the middle, several guard cells with `2Gr*2Gd` dimensions stays around the CUT, eliminating the increase of  noise average due to the raising signal. The training cell with `2Tr*2Td` stays around the guarding cell to compute noise average. Here I select  `Tr=8, Td=4, Gr=4, Gd=3` to obtain a better recognition result.
 	2. For each cell with a whole slide window, we compute the noise average:
